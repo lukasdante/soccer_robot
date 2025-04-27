@@ -1,5 +1,9 @@
 # Soccer Robot (Ball Finding)
 
+<!-- ![Lol](images/detection.jpeg?raw=true "Title") {width: 200px;} -->
+<p align="center">
+<img src="images/detection.jpeg" alt="detection" style="width: 400px; ">
+</p>
 This is a robot that uses L298n motor drivers to control four (4) DC motors, a 1080p web camera, a Raspberry Pi 5 8GB, 2x18650 batteries for motor power supply, and a powerbank for portable Raspberry Pi power supply. The code structure is presented below.
 
 ```bash
@@ -56,7 +60,7 @@ This is the crontab script that runs the code that runs automatically when the R
 
 `/home/ball_finder/Scripts/src/soccer_dynamic.py` - this is the Python script you are running (which is the default)
 
-## How do I change the script I run during runtime?
+## How do I change the script I run during startup/boot?
 
 1. Open crontab by typing `crontab -e` in the terminal.
 2. If you want to change from `soccer_dynamic.py` to `ball_finder.py` for example, just change the `soccer_dynamic.py` to `ball_finder.py`. As easy as that, take note that you can see the code way below the crontab script, you just have to change that.
@@ -67,3 +71,9 @@ This is the crontab script that runs the code that runs automatically when the R
 ```
 4. Type `CTRL+O` then `ENTER` then `CTRL+X`. This will save that.
 5. To ensure you have the right script in your crontab, type `crontab -l` in the terminal. This will show you the code you wrote.
+
+## How do I calibrate?
+
+Look at the `move_dynamic` function in `ball_finder.py` or `soccer_dynamic.py`. This controls the amount of corrective movement to center the target object. Suppose you have a target object to the left of the robot, it will try to center the robot using that function. What you will change is the parameter `self.close_loop_gain`
+- increasing it will lead to stronger turning reaction, do this if the robot can't fails to turn enough.
+- decreasing it will lead to weaker turning reaction, do this if the robot turns so much, it passes the target object

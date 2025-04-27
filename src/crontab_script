@@ -1,2 +1,1 @@
-@reboot /home/ball_finder/Scripts/env/bin/python /home/ball_finder/Scripts/src/>
-@reboot echo "I rebooted!" >> /home/ball_finder/Scripts/logs/run.log
+@reboot /home/ball_finder/Scripts/env/bin/python /home/ball_finder/Scripts/src/soccer_dynamic.py

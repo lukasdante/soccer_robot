@@ -1,0 +1,23 @@
+description: Ultralytics YOLO11n model trained on /content/drive/MyDrive/ball_finder/1800/data.yaml
+author: Ultralytics
+date: '2025-04-24T04:36:21.971621'
+version: 8.3.114
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: blue_ball
+  1: blue_goal
+  2: green_ball
+  3: green_goal
+  4: red_ball
+  5: red_goal
+args:
+  batch: 1
+  half: false
+channels: 3
